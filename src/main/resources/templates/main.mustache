@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main Page</title>
+
+</head>
+<body>
+<div>
+    <form action="/logout" method="post">
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}">
+        <input type="submit" value="Sign out"/>
+    </form>
+</div>
+<div>
+    <form method="post">
+        <input type="text" name="text" placeholder="Enter message text"/>
+        <input type="number" name="cost" placeholder="Enter cost"/>
+        <input type="text" name="description" placeholder="Enter description"/>
+        <input type="text" name="customerContact" placeholder="Enter other contacts"/>
+        <input type="email" name="email" placeholder="Enter email"/>
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}">
+        <button type="submit">Add</button>
+    </form>
+</div>
+<div>Deals List</div>
+{{#messages}}
+    <div>
+        {{id}}
+        {{text}}
+        {{email}}
+        {{customerContact}}
+        {{description}}
+        {{cost}}
+    </div>
+{{/messages}}
+</body>
+</html>
