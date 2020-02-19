@@ -19,7 +19,7 @@ public class MainController {
 
     @GetMapping("/")
     public String greeting() {
-        return "hello";
+        return "greeting";
     }
 
     @GetMapping("/main")
